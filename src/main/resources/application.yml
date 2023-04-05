@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://ssh.soar2568.top:3306/dailyhub?useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 2021023255
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  freemarker:
+    suffix: .ftl
+    settings:
+      classic_compatible: true
+  redis:
+    database: 0
+    port: 6379
+    host: ssh.soar2568.top
+    password: 2021023255
+wechat:
+  mpAppId: wxba845ed143f650d2
+  mpAppSecret: c2bc008a2a4417e6f54abf4d826671a0
+  token: 111111111
+server:
+  domain: http://47.115.229.221:8080
