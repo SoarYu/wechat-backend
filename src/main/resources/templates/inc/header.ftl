@@ -33,7 +33,7 @@
                         <span>${current.username}</span>
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="/collect/edit">新建收藏</a></li>
+                        <li><a class="dropdown-item" href="/api/collect/edit">新建收藏</a></li>
                         <li><a class="dropdown-item" href="#">个人中心</a></li>
                         <li>
                             <hr class="dropdown-divider">

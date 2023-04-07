@@ -1,4 +1,4 @@
-
+<script id="collect-card-tpl" type="text/html">
 {{# layui.each(d.content, function(index, item){ }}
 <div class="col-sm-6 col-lg-6 mb-4 masonry-item" id="masonry-item-{{item.id}}">
     <div class="card p-3">
@@ -17,8 +17,8 @@
                 <img src="{{item.user.avatar}}" alt="mdo" width="32" height="32" class="rounded-circle">
                 <span>{{ item.user.username }}</span>
                 {{# if(item.user.id == ${current.id}){ }}
-                <a class="text-reset" href="/collect/edit?id={{item.id}}">编辑</a>
-                <a class="text-reset" href="handleDel({{item.id}})">删除</a>
+                <a class="text-reset" href="/api/collect/edit?id={{item.id}}">编辑</a>
+                <a class="text-reset" href="javascript:handleDel('{{item.id}}')">删除</a>
                 {{# } }}
             </p>
 
@@ -30,3 +30,4 @@
     </div>
 </div>
 {{# }); }}
+</script>

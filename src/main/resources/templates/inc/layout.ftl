@@ -33,12 +33,9 @@
     <body>
     <div class="container" style="max-width: 960px;">
 
-        <#list >
+        <#include "/inc/header.ftl" />
 
-        </#list>
-<#--        <#include "/inc/header.ftl" />-->
-
-<#--        <#nested >-->
+        <#nested >
 
     </div>
 

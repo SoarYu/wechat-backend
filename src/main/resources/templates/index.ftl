@@ -17,7 +17,7 @@
                             <div class="collapse show" id="collapse-${dateline.title}">
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                     <#list dateline.children as child>
-                                        <li><a href="hendleDateline('${child.title}')" class="link-dark rounded">${child.title}</a></li>
+                                        <li><a href="javascript:hendleDateline('${child.title}')" class="link-dark rounded">${child.title}</a></li>
                                     </#list>
                                 </ul>
                             </div>
@@ -29,12 +29,13 @@
         </div>
         <!---->
         <div class="col col-9" id="collects-col">
-<#--            <#include "/inc/collect-tpl.ftl">-->
-<#--            <div class="row" id="masonry"></div>-->
+            <#include "/inc/collect-tpl.ftl">
+            <div class="row" id="masonry"></div>
         </div>
     </div>
 
     <script>
+
         var userId = '${userId}'
         if (userId == null || userId == '') {
             userId = '${current.id}'
@@ -55,7 +56,7 @@
                 , end: '哥，这回真的没了~'
                 , done: function (page, next) {
 
-                    $.get('${base}/api/collects/' + userId + '/'+ dateline, {
+                    $.get('/api/collects/' + userId + '/'+ dateline, {
                         page: page,
                         size: 10
                     }, function (res) {
@@ -80,7 +81,7 @@
         // 删除操作
         function handleDel(id) {
             layer.confirm('是否确认删除?', function (index) {
-                $.post('${base}/api/collect/delete?id=' + id, function (res) {
+                $.post('/api/collect/delete?id=' + id, function (res) {
                     if (res.code == 0) {
                         $('#masonry-item-' + id).remove()
                     }

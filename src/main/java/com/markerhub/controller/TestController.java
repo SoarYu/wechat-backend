@@ -20,7 +20,7 @@ public class TestController {
     @ResponseBody
     @GetMapping("/test")
     public String test(HttpServletRequest request) {
-        User user = userRepository.getById(2L);
+        User user = userRepository.getById(Long.valueOf((String) request.getAttribute("userId")));
         request.setAttribute("username", user.getUsername());
         return "test";
     }
